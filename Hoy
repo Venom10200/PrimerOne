@@ -1,0 +1,136 @@
+Menu=int(input("Menu Principal : \n 1.- Area Y perimetro de un triangulo \n 2.- Ecuacion de Segundo Grado \n 3.- Funciones \n 99.- Salir \n"))
+
+#a=int(input("Introduce a: "))
+#b=int(input("Introduce b"))
+
+while Menu != 99:
+    if Menu == 1:
+        print("Elejiste Area y Perimerimetro de Un triangulo")
+        class miclase:
+            def __init__(self,lado1,lado2,lado3):
+                self.lado1= lado1
+                self.lado2= lado2
+                self.lado3= lado3
+
+        Lado1= miclase(input("Ingresa el primer lado: "), input("Ingresa el segundo lado: "), input("Ingresa el tercer lado: "))
+        print("")
+        if Lado1.lado1 == Lado1.lado2 and  Lado1.lado2 == Lado1.lado3 and Lado1.lado3 == Lado1.lado1:
+            print("Es un  triangulo Equilatero")
+        elif Lado1.lado1 != Lado1.lado2 and  Lado1.lado2 != Lado1.lado3 and Lado1.lado3 != Lado1.lado1:
+            print("Es un triangulo Escaleno")
+        else:
+            print("Es Un triangulo Isoceles")
+            
+        class area:
+            def __init__(self, base, altura):
+                self.base = base
+                self.altura=altura
+        print("")
+        print("Calculo de Area")
+        Area1=area(float(input("Introduce el valor de la base: ")),float( input("Introduce el numero de la altura: ")))
+
+        Area = (Area1.base * Area1.altura)/2
+        print("")
+        print("El resultado del area es:{} ".format(Area))
+
+        class perimetro:
+            def __init__(self, lado1, lado2, lado3):
+                self.lado1=lado1
+                self.lado2=lado2
+                self.lado3=lado3
+        print("")
+        print("Calculo de perimetro")
+        Perimetro1=perimetro(float(input("Ingresa el valor del primer lado: ")), float(input("Introduce el valor del segundo lado: ")), float(input("Introduce el valor del tercer lado: ")))
+
+        Perimetro= Perimetro1.lado1 + Perimetro1.lado2 + Perimetro1.lado3
+        print("")
+        print("El resultado del perimetro es:{} ".format(Perimetro))
+
+                
+        #Lado2= miclase(lado1, input("Ingresa el segundo dato"), lado3)
+        #miclase(input("Ingresa el primer lado del triangulo: "))
+        #Lado2= miclase(input("Ingresa el primer lado del triangulo: "))
+        #Lado3= miclase(input("Ingresa el primer lado del triangulo: "))
+        #print(Lado1.lado1, Lado1.lado2, Lado1.lado3)
+        #print(Lado2.lado2)
+        #print(Lado3.lado3)
+                #if lado1==lado2:
+                    #if lado2==lado3:
+                       # if lado3==lado1:
+
+    elif Menu == 2:
+     # import math
+      print("----RESOLVIENDO ECUACIONES DE SEGUNDO GRADO----")
+      print("--TENIENDO EN CUENTA LA ECUACION ax^2+bx+c=0---")
+      print("-----FORMULA GENERAL X= (-b±√b^2-4ac)/(2a)-----")
+      a=int(input("Introduce el valor de a: "))
+      b=int(input("Introduce el valor de b: "))
+      c=int(input("Introduce el valor de c: "))
+
+      d=(b*b)-4*a*c
+
+      if d<0:
+          print("No existen soluciones reales")
+      else:
+          x1=(-b+math.sqrt(d))/(2*a)
+          x2=(-b-math.sqrt(d))/(2*a)
+          print("")
+          print("-----SOLUCIONES-----")
+          print("---Solucion X1: ", x1)
+          print("---Solucion X2: ", x2)
+    elif Menu == 3:
+       print("Elejiste Funciones")
+       MenuPrincipal=int(input("Menu: \n 1.- CALCULO DE TERMINOS \n 2.- CALCULO DEL PRIMER TERMINO \n 3.- CALCULO DE LA DIFERENCIA \n 4.- CALCULO LA POSICION DEL TERMINO \n 0.- SALIR \n"))
+
+       while MenuPrincipal !=0:
+           if MenuPrincipal == 1:
+               print("")
+               print("Formula general an= a1+d(n-1)")
+               Dato1=int(input("Introduce el primer termino (a1): "))
+               Dato2=int(input("Introduce la diferencia (d): "))
+               Dato3=int(input("Introduce la posicion del termino (n): "))
+               resultado= Dato1+(Dato2)*(Dato3-1)
+               print("")
+               print("El resultado es: ",resultado)
+               print("")
+               
+           elif MenuPrincipal == 2:
+               print("")
+               print("Formula general a1= an-d(n-1)")
+               Dato1=int(input("Introduce el enesimo termino (an): "))
+               Dato2=int(input("Introduce la diferencia (d): "))
+               Dato3=int(input("Introduce la posicion del termino (n): "))
+               resultado= Dato1-(Dato2)*(Dato3-1)
+               print("")
+               print("El resultado es: ",resultado)
+               print("")
+           
+           elif MenuPrincipal == 3:
+               print("")
+               print("Formula general d= (an-a1)/(n-1)")
+               Dato1=int(input("Introduce el enesimo termino (an): "))
+               Dato2=int(input("Introduce el primer termino (a1): "))
+               Dato3=int(input("Introduce la posicion del termino (n): "))
+               resultado= (Dato1-Dato2)/(Dato3-1)
+               print("")
+               print("El resultado es: ",resultado)
+               print("")
+               
+           elif MenuPrincipal == 4:
+               print("")
+               print("Formula general n= (an-a1/d)+1")
+               Dato1=int(input("Introduce el enesimo termino (an): "))
+               Dato2=int(input("Introduce el primer termino (a1): "))
+               Dato3=int(input("Introduce la diferencia (d): "))
+               resultado= ((Dato1-Dato2)/Dato3)+1
+               print("")
+               print("El resultado es: ",resultado)
+               print("")
+              
+           else:
+               print("Porfavor dijita una opcion correcta")
+               
+           MenuPrincipal=int(input("Menu: \n 1.- CALCULO DE TERMINOS \n 2.- CALCULO DEL PRIMER TERMINO \n 3.- CALCULO DE LA DIFERENCIA \n 4.- CALCULO LA POSICION DEL TERMINO \n 0.- SALIR \n"))
+               
+               
+    Menu=int(input("Menu Principal : \n 1.- Area Y perimetro de un triangulo \n 2.- Ecuacion de Segundo Grado \n 3.- Funciones \n 99.- Salir \n"))
